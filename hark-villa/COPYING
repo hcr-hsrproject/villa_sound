@@ -1,0 +1,178 @@
+			HARK LICENSE AGREEMENT
+		       version 1.0, April 2008
+		http://winnie.kuis.kyoto-u.ac.jp/HARK/
+
+The Kyoto University and ("Kyoto University") and Honda Research
+Institute Japan Co.,Ltd. ("HRI-JP") collaboratively developed a
+certain computer program for voice audio system named "HARK", and the
+Kyoto University and Honda Motor Co., Ltd., a due ultimate assigner of
+all titles to the intellectual properties created by HRI-JP regarding
+HARK (individually or collectively "Licensor") hereby release and make
+publicly available the source code of HARK to free software
+development community under the terms and conditions of this license.
+PLEASE READ THIS AGREEMENT CAREFULLY AND COMPLETELLY BEFORE
+DOWNLOADING HARK. BY INSTALLING, USING OR DISTRIBUTING HARK, YOU
+ACCEPT ALL OF THE TERMS OF THIS AGREEMENT.
+
+Section 1.Definitions
+1.1 "License" means the terms and conditions for use, reproduction,
+    distribution and modification of the Software as specified herein.
+1.2 "Software" means the Original Work and the Derivative Work, the
+    combination of any portion of the Original Work and the Derivative
+    Work, or any respective portions thereof.
+1.3 "Original Work" means any works named "HARK" whether in source or
+    object code, made available hereunder including any update or
+    upgrade thereof, sample files and the related documentations.
+1.4 "Derivative Work" means any addition to, deletion from or change
+    to the substance or the structure of the Original Work, any new
+    work whether in source or object code which contains any part of
+    the Original Work including any revisions and modification of the
+    Original Work, or which is based on or derived from the Original
+    Work. For the purposes of the License, the Derivative Work shall
+    not include any works which works independently from and remains
+    separable from, or merely link to the interface of, the Original
+    Work.
+1.5 "Contribution" means any Derivative Work created and published as
+    a component(s) of HARK pursuant to the Section 2.1(3)(i) or any
+    contribution to any creation of such Derivative Work.
+1.6 "Contributor" means any individual and legal entity that creates
+    or makes the Contribution.
+1.7 "You" or "Your" means an individual or legal entity excising
+    rights under the License.
+
+Section 2. License Grant 
+2.1 Subject to the terms and conditions of the License, the Licensor
+    and each Contributor hereby grant to you a world-wide,
+    non-exclusive, royalty free, non-assignable, non-transferable
+    license to reproduce, use, modify the Software and/or distribute
+    the Derivative Works in object or source code only for the purpose
+    of research, development, education and/or academic purpose ("
+    Purpose") provided that:
+(1) You reproduce in all copies of the Software that you make or
+    create, or in the Derivative Work that You create ("Your
+    Derivative Work") and distribute in accordance the License the
+    copyright, trademark and other proprietary notices as they appear
+    in the Original Work and any other notices and disclaimers
+    attached to the Software and keep intact all notices in the
+    Software that refer to the License and absence of any warranty;
+(2) You include a copy of the License with every copy of Your
+    Derivative Work which You distribute;
+(3) In case that You distribute Your Derivative Work to any user, you
+    (i) publish Your Derivative Work and all of the source code
+    information thereof where You and the Licenser agreed separately,
+    or (ii) provide the Licensor with Your Derivative Work and all of
+    the source code information thereof;
+(4) When You publish any research results that You make using the
+    Software including Your Derivative Work in any manner whatsoever
+    including in paper, presentation or demonstration, You clearly
+    mention in the publication the fact that You use the Software
+    granted hereunder in the process of Your research or to achieve
+    such results.
+2.2 You may add Your own copyright, trademark and other proprietary
+    notices to Your Derivative Work and may provide additional terms
+    and conditions for use, reproduction, distribution and
+    modification of Your Derivative Work, provided that You are not
+    authorized to impose any terms or conditions which may conflict
+    with or prevail those of the License.
+2.3 In case that You desire to use the Software other than the
+    purposes authorized hereunder including for commercial, economical
+    or otherwise business purpose You; (i) first inform of the
+    Licensor Your intention of such commercial use, and (ii) enter
+    into a license agreement separately of which terms and conditions
+    will be negotiated and agreed by You and the Licensor.
+
+Section 3. Support 
+You may request and ask for any supports, including bug fixes, updates
+or upgrades of the Software, or any other enhancement in using the
+Software or regarding the License ("Support") at the web-site of HARK
+(http://winnie.kuis.kyoto-u.ac.jp/HARK/) or sending an E-mail to:
+"hark-support@kuis.kyoto-u.ac.jp". The Licensor may, at its own
+discretion, provide You with any Support therefor directly or at HARK
+web-site. In no case, the Licensor is liable, responsible or otherwise
+obligated to; (i) reply to You, or provide You with the Support, or
+(ii) warrant the Support is valid, correct, effective or otherwise
+serves the specific purpose intended by You.
+
+Section 4. Disclaimer of Warranty 
+The Licensor and each Contributor provide the Software on an "AS IS
+BASIS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,EITHER EXPRESS OR
+IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES AND OR
+CONDITIONS OF TITLE, FREE OF DEFECTS, NON-INFRINGEMENT,
+MERCHANTABILILY, OR FITNESS FOR A PATICULAR PURPOSE. You are sorely
+responsible for determining the appropriateness of using the Software
+or distributing Your Derivative Work.
+
+Section 5. Trademarks and Logos
+The License does not grant any right or license to use the trademarks,
+trade names, logos, and service marks or product names of the Licensor
+except as required to describe the origin of the Software in the
+Section 2.1.
+
+Section 6. Patents
+In case that any patent(s) is used in the Software or Your use of the
+Software may constitute any use of the Licensor or any Contributor's
+patent(s), the License does not grant any right or license to use the
+patent other than using the Software hereunder.
+
+Section 7. Limited Warranty 
+In no event and under no legal theory, whether in tort or contract,
+shall the Licensor and any Contributor be liable to You for damages,
+including any direct, indirect, special, incidental, or consequential
+damages of any character arising from or as a result of the License or
+out of the use or inability to use the Software including but not
+limited to damages for loss of goodwill, work stoppage, loss of data,
+computer failure or malfunction or any or all other damages or losses
+even if the Licensor or such Contributor has been advised of the
+possibility of such damages.
+
+Section 8. Termination 
+8.1 The Licensor may terminate the License granted to You upon notice
+    for Your breach of any terms and conditions of the License.
+8.2 The Licensor may terminate the License granted to You at its sole
+    discretion with thirty (30) days prior notice for any reason
+    whatsoever.
+8.3. In case of the termination pursuant to this Section 8, You
+     immediately cease any further use, reproduction and modification
+     of the Software, sublicensing and distribution of the Derivative
+     Work, and destroy or delete the Software in your procession or
+     control. All licenses for the Derivative Work which has been
+     properly granted prior to the termination shall survive the
+     termination of the License for three (3) years.
+8.4 Notwithstanding the provision of Section 8.3, in case that You
+    desire to continue use of Your Derivative Work after the
+    termination of the License, You obtain a prior written consent of
+    the Licensor for such use under certain terms and conditions
+    mutually agreed separately by You and the Licensor.
+
+Section 9. Miscellaneous
+9.1 The License will not be construed as creating an agency,
+    partnership, joint venture or any other form of legal association
+    between You and the Licensor. You will not represent to the
+    contrary, whether expressly, by implications or otherwise.
+9.2 Nothing in the License will impair the Licensor's right to
+    acquire, license, develop, make someone develop for its behalf,
+    publish or distribute technologies or products that perform the
+    same or similar functions as, or otherwise compete with, YOUR
+    Derivative Work, or technologies or products that You may create,
+    develop, produce, publish or distribute.
+9.3 Should for any reason any provisions of the License or portion
+    thereof, be found to be in valid or unenforceable in any
+    jurisdiction in which the License is being performed, the reminder
+    of the License will be valid and enforceable and the parties will
+    use good faith to negotiate a substitute, valid, and enforceable
+    provision which most nearly effects the parties' intent in
+    entering into the License.
+9.4 This Agreement will be governed by and construed in accordance
+    with the laws of Japan without reference to conflicts of laws
+    principles.
+9.5 This Agreement will be executed in the English language even
+    though there is any translation thereof.
+
+9.4 This Agreement will be governed by and construed in accordance
+    with the laws of Japan without reference to conflicts of laws
+    principles.
+
+9.5 This Agreement will be executed in the English language even
+    though there is any translation thereof.
+
+			 END OF THE AGREEMENT

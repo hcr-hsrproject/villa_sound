@@ -1,0 +1,14 @@
+Source: hark-ros-indigo
+Section: non-free/science
+Priority: extra
+Maintainer: HRI-JP <support@hark.jp>
+Build-Depends: debhelper (>= 7), autotools-dev
+Standards-Version: 3.8.1
+Homepage: http://www.hark.jp/
+
+Package: hark-ros-indigo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends} , ros-indigo-desktop-full , hark-ros-stacks-indigo
+Conflicts: hark-ros , hark-ros-cturtle , hark-ros-electric , hark-ros-fuerte , hark-ros-groovy , hark-ros-kinetic
+Description: HARK modules interfacing with ROS
+ This is flowdesigner nodes for HARK-ROS.

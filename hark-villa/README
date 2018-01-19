@@ -1,0 +1,5 @@
+Install autoconf:
+sudo apt-get install autoconf
+
+Make and install this package:
+build_custom_nodes.sh (in villa_sound_localization catkin package)

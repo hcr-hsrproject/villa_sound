@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<categories>
+  <category name="snacks" defaultLocation="desk" room="office">
+    <object name="chips"         difficulty="moderate" color="red" size="5"  weight="3"/>
+    <object name="senbei"        difficulty="moderate" color="" size=""  weight=""/>
+    <object name="pringles"      difficulty="easy" color="red" size="5"  weight="4"/>
+    <object name="peanuts"       difficulty="easy" color="brown" size="2"  weight="2"/>
+  </category>
+  <category name="candies" defaultLocation="center table" room="living room">
+    <object name="chocolate bar" difficulty="moderate"   color="brown" size="2"  weight="2" />
+    <object name="manju"         difficulty="easy"    color="" size=""  weight="" />
+    <object name="mints"         difficulty="moderate" type="alike"  color="green" size="2"  weight="3"/>
+    <object name="chocolate egg" difficulty="high"  color="brown" size="3"  weight="3" />
+  </category>
+  <category name="food" defaultLocation="fridge" room="kitchen">
+    <object name="noodles"       difficulty="easy"  color="yellow" size="3"  weight="2"  />
+    <object name="apple"         difficulty="moderate" type="alike"   fruit="true" color="red" size="3"  weight="4"   />
+    <object name="paprika"       difficulty="moderate" type="alike"  color="red" size="2"  weight="2" />
+    <object name="melon"         difficulty="high"     type="alike"   fruit="true"  color="green" size="7"  weight="9" />
+    <object name="sushi"         difficulty="high"     type="alike"   color="white" size="1"  weight="2"/>
+    <object name="flakes"        difficulty="high"     type="known"   canPour="true" color="white" size=""  weight="" />
+    <object name="oat"           difficulty="high"     type="known"   canPour="true"  color="" size=""  weight=""/>
+  </category>
+  <category name="drinks" defaultLocation="bar" room="living room">
+    <object name="tea"           difficulty="easy"  canPour="true" color="" size=""  weight=""/>
+    <object name="beer"          difficulty="easy" alcoholic="true" color="" size=""  weight=""/>
+    <object name="coke"          difficulty="easy"    canPour="true" color="" size=""  weight=""/>
+    <object name="sake"          difficulty="moderate"   canPour="true"    alcoholic="true" color="" size=""  weight=""/>
+  </category>
+  <category name="toiletries" defaultLocation="cupboard" room="bathroom">
+    <object name="shampoo"       difficulty="moderate"    color="" size=""  weight=""/>
+    <object name="soap"          difficulty="easy"   color="" size=""  weight=""/>
+    <object name="cloth"         difficulty="high"     type="alike"  color="" size=""  weight=""/>
+    <object name="sponge"        difficulty="high"  color="" size=""  weight="" />
+  </category>
+  <category name="containers" defaultLocation="counter" room="kitchen">
+    <object name="bowl"          difficulty="high"                    canPourIn="true"         color="" size=""  weight=""         />
+    <object name="mug"           difficulty="high"                    canPourIn="true"  color="" size=""  weight=""                />
+    <object name="glass"         difficulty="moderate"                canPourIn="true"  color="" size=""  weight=""                />
+    <object name="tray"          difficulty="high"     type="special" canPlaceOn="true" twoHands="true" color="" size=""  weight=""/>
+    <object name="plate"         difficulty="moderate" type="special" canPlaceOn="true"          color="" size=""  weight=""       />
+    <object name="box"           difficulty="high"     type="special" canPlaceIn="true" twoHands="true" color="" size=""  weight="" />
+    <object name="bag"           difficulty="easy"     type="special" canPlaceIn="true"     color="" size=""  weight=""      />
+  </category>
+</categories>

@@ -1,0 +1,101 @@
+hark-ros-indigo (2.3.0) trusty; urgency=low
+
+  * Release for v2.3.0
+
+ -- HRI-JP <support@hark.jp>  Fri, 02 Dec 2016 13:19:04 +0900
+
+hark-ros-indigo (2.2.0) trusty; urgency=low
+
+  * Release for v2.2.0
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Fri, 06 Nov 2015 15:00:23 +0900
+
+hark-ros-indigo (2.2.0~7590) trusty; urgency=low
+
+  * Pre release for 2.2.0
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Tue, 14 Jul 2015 19:53:30 +0900
+
+hark-ros-indigo (2.1.1) trusty; urgency=medium
+
+  * 
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Mon, 09 Feb 2015 16:17:18 +0900
+
+hark-ros-indigo (2.0.3) trusty; urgency=low
+
+  * ubuntu14
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Mon, 29 Sep 2014 16:13:56 +0900
+
+hark-ros-groovy (2.0.0.6430) precise; urgency=low
+
+  * elevation supported
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Tue, 10 Dec 2013 14:47:56 +0900
+
+hark-ros-groovy (2.0.0.5841) precise; urgency=low
+
+  * 
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Tue, 03 Dec 2013 22:30:13 +0900
+
+hark-ros-groovy (1.9.9.5208) precise; urgency=low
+
+  * 2013/10/01 release
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Wed, 02 Oct 2013 18:40:49 +0900
+
+hark-ros-groovy (1.2.0.4514) precise; urgency=low
+
+  * 
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Mon, 11 Mar 2013 02:04:03 -0700
+
+hark-ros-groovy (1.1.2) precise; urgency=low
+
+  * 1.1.2.4176 1.1.2
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Fri, 08 Feb 2013 21:19:45 +0900
+
+hark-ros-groovy (1.1.2) precise; urgency=low
+
+  * 1.2.0 beta
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Tue, 08 Jan 2013 12:14:56 +0900
+
+hark-ros (1.0.7) lucid; urgency=low
+
+  * 
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Mon, 16 Jan 2012 14:42:13 +0900
+
+hark-ros (1.0.6) lucid; urgency=low
+
+  * 
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Mon, 16 Jan 2012 14:41:49 +0900
+
+hark-ros (1.0.5) lucid; urgency=low
+
+  * 
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Tue, 18 Oct 2011 16:35:27 +0900
+
+hark-ros (1.0.4) lucid; urgency=low
+
+  * New Package
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Fri, 22 Apr 2011 11:02:02 +0900
+
+hark-ros (1.0.3) lucid; urgency=low
+
+  * 
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Fri, 14 Jan 2011 21:14:49 +0900
+
+hark-ros (1.0.2) unstable; urgency=low
+
+  * Initial Release.
+
+ -- HRI-JP <hark-support@kuis.kyoto-u.ac.jp>  Fri, 12 Nov 2010 13:12:48 +0900

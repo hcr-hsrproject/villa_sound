@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+
+from villa_sound_localization.settings import DATA_DIR, NETWORK_FILES_DIR
+from villa_sound_localization import noise
+
+import rospy
+from std_msgs.msg import Bool
+import sys
+import atexit
+import signal
+import subprocess
+import os.path
+
+# Init node
+rospy.init_node('sound_localization', anonymous=True)
+
+# Create new process group and become its leader
+# Kill all children (!) on exit
+# Ignore if permission denied error (e.g. when node is roslaunched)
+try:
+    os.setpgrp()
+    atexit.register(lambda: os.killpg(0, signal.SIGKILL))
+except OSError:
+    # Kill batchflow on shutdown
+    rospy.on_shutdown(lambda: os.system('killall batchflow'))
+
+
+# Run main audiostream
+audiostream = subprocess.Popen(os.path.join(NETWORK_FILES_DIR, 'audiostream_sharedmem.n'))
+
+"""
+Run the localization node
+"""
+# Localization node arguments
+args = [
+    os.path.join(DATA_DIR, 'NOISEr.noise'),
+    os.path.join(DATA_DIR, 'NOISEi.noise'),
+    #'plughw:0,0',
+    os.path.join(DATA_DIR, 'pseye_rectf.zip'),
+]
+
+# Run localization ros node
+localization = subprocess.Popen([os.path.join(NETWORK_FILES_DIR, 'localization_publisher_nonormalize.n')] + args)
+
+
+"""
+Noise suppression handling
+"""
+noise_calibration = noise.Noise()
+
+def start_noise(flag):
+    if flag:
+        noise_calibration.start()
+
+def stop_noise(flag):
+    if flag:
+        noise_calibration.stop()
+
+rospy.Subscriber('/villa/sound_localization/noise/start', Bool, start_noise)
+rospy.Subscriber('/villa/sound_localization/noise/stop', Bool, stop_noise)
+
+rospy.spin()

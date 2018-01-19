@@ -1,0 +1,7 @@
+#undef SVN_REVISION
+
+#undef TAGS_VERSION
+
+#undef MIC_CHANNELS
+
+#undef MIC_FRAME_LENGTH

@@ -1,0 +1,86 @@
+#!/usr/bin/env batchflow
+<?xml version="1.0"?>
+<Document>
+  <Network type="subnet" name="MAIN">
+    <Node name="node_MAIN_LOOP_1" type="MAIN_LOOP" x="100" y="210">
+      <Parameter name="noise_real" type="subnet_param" value="ARG1" description="subnet_param"/>
+      <Parameter name="noise_imaginary" type="subnet_param" value="ARG2" description="subnet_param"/>
+    </Node>
+    <Node name="node_RosNodeGenerator_1" type="RosNodeGenerator" x="100" y="100">
+      <Parameter name="NODE_NAME" type="string" value="HARK_NOISE_NODE" description="Node name for ROS"/>
+    </Node>
+    <NetOutput name="VALUE" node="node_RosNodeGenerator_1" terminal="VALUE" object_type="int" description="int parameter"/>
+    <NetOutput name="OUTPUTCM" node="node_MAIN_LOOP_1" terminal="OUTPUTCM" object_type="Matrix&lt;complex&lt;float&gt;&gt;" description="Same as INPUTCM"/>
+  </Network>
+  <Network type="iterator" name="MAIN_LOOP">
+    <Node name="node_MultiFFT_1" type="MultiFFT" x="800" y="200">
+      <Parameter name="LENGTH" type="int" value="512" description="FFT length in sample. [default: 512]"/>
+      <Parameter name="WINDOW" type="string" value="CONJ" description="A window function for FFT. WINDOW should be CONJ, HAMMING, RECTANGLE, or HANNING. [default: CONJ]"/>
+      <Parameter name="WINDOW_LENGTH" type="int" value="512" description="Window length of the window function. [default: 512]"/>
+    </Node>
+    <Node name="node_CMMakerFromFFTwithFlag_1" type="CMMakerFromFFTwithFlag" x="770" y="290">
+      <Parameter name="DURATION_TYPE" type="string" value="FLAG_PERIOD" description="If FLAG_PERIOD, CM is generated based on ADDER_FLAG. If WINDOW_PERIOD, CM is generated every PERIOD frames."/>
+      <Parameter name="WINDOW" type="int" value="50" description="The number of frames used for calculating a correlation function."/>
+      <Parameter name="PERIOD" type="int" value="50" description="The period for outputting the correlation matrix. Even if ADDER_FLAG is kept to be 1, this block forcely executes NormalizeCorrelation when sum_count is over PERIOD. Set this value 0 if you do not want to use this function."/>
+      <Parameter name="WINDOW_TYPE" type="string" value="FUTURE" description="Window selection to accumulate a correlation function. If PAST, the past WINDOW frames from the current frame are used for the accumulation. If MIDDLE, the current frame will be the middle of the accumulated frames. If FUTURE, the future WINDOW frames from the current frame are used for the accumulation. FUTURE is the default from version 1.0, but this makes a delay since we have to wait for the future information. PAST generates a internal buffers for the accumulation, which realizes no delay for localization."/>
+      <Parameter name="MAX_SUM_COUNT" type="int" value="0" description="The maximum count for adding the correlation matrix. Even if ADDER_FLAG is kept to be 1, this block forcely executes NormalizeCorrelation when sum_count is over MAX_SUM_COUNT. Set this value 0 if you do not want to use this function."/>
+      <Parameter name="ENABLE_ACCUM" type="bool" value="false" description="enable to accumulate the hitory of correlation matrix."/>
+      <Parameter name="ENABLE_DEBUG" type="bool" value="false" description="enable debug print"/>
+    </Node>
+    <Node name="node_Constant_1" type="Constant" x="870" y="470">
+      <Parameter name="VALUE" type="subnet_param" value="noise_real" description="The value"/>
+    </Node>
+    <Node name="node_Constant_2" type="Constant" x="870" y="550">
+      <Parameter name="VALUE" type="subnet_param" value="noise_imaginary" description="The value"/>
+    </Node>
+    <Node name="node_CMSave_1" type="CMSave" x="1110" y="580">
+      <Parameter name="ENABLE_DEBUG" type="bool" value="false" description="enable debug print"/>
+    </Node>
+    <Node name="node_Equal_1" type="Equal" x="390" y="410">
+    </Node>
+    <Node name="node_Constant_3" type="Constant" x="210" y="500">
+      <Parameter name="VALUE" type="int" value="1" description="The value"/>
+    </Node>
+    <Node name="node_RosStdMsgsSubscriber_1" type="RosStdMsgsSubscriber" x="120" y="350">
+      <Parameter name="ROS_MESSAGE_TYPE" type="string" value="Int32" description="Subscribed ROS message type. Match this setting and subscribed ROS message type."/>
+      <Parameter name="OUT_ARRAY_FORMAT" type="string" value="Vector&lt;&gt;" description="Hark output format. This parameter is valid when the ROS_MESSAGE_TYPE is related to MultiArray. The subscribed MultiArray message is converted to this format."/>
+      <Parameter name="BOOL_DEFAULT" type="bool" value="false" description="Default output bool during no data period [default: false]"/>
+      <Parameter name="INT_DEFAULT" type="int" value="0" description="Default output integer during no data period [default: 0]"/>
+      <Parameter name="FLOAT_DEFAULT" type="float" value="0" description="Default output float during no data period [default: 0.0]"/>
+      <Parameter name="ENABLE_DEBUG" type="bool" value="false" description="print debug message of this module in case of true."/>
+      <Parameter name="TOPIC_NAME" type="string" value="/villa/sound_localization/noise/internal/stop" description="Subscribed topic name for ROS (HarkWave type message)"/>
+      <Parameter name="ROS_LOOP_RATE" type="float" value="1000000" description="This allows you to specify a frequency that you would like to loop at [Hz]. Keep this value large. (If ROS interval is shorter than HARK interval, ROS interval is overwritten.)"/>
+      <Parameter name="MSG_BUFFER_NUM" type="int" value="100" description="Buffer size for a ROS subscribed message."/>
+      <Parameter name="DATA_BUFFER_NUM" type="int" value="100" description="Buffer save size for a HARK output. Too small value makes packet loss. Too large value takes large memory. Minimum size is 5."/>
+      <Parameter name="REMAIN_LATEST" type="bool" value="false" description="Enable to keep the latest data as output even when this module doesn&#x27;t receive any messages [default: false]"/>
+    </Node>
+    <Node name="node_NOT_1" type="NOT" x="570" y="410">
+    </Node>
+    <Node name="node_VillaReadSharedMicrophone_1" type="VillaReadSharedMicrophone" x="100" y="100">
+      <Parameter name="ADVANCE" type="int" value="160" description="Frame shift."/>
+      <Parameter name="ENABLE_DEBUG" type="bool" value="false" description="print debug message of this module in case of true."/>
+    </Node>
+    <Node name="node_Equal_2" type="Equal" x="1020" y="30">
+    </Node>
+    <Node name="node_Constant_4" type="Constant" x="800" y="30">
+      <Parameter name="VALUE" type="int" value="1" description="The value"/>
+    </Node>
+    <Node name="node_Constant_5" type="Constant" x="800" y="100">
+      <Parameter name="VALUE" type="int" value="1" description="The value"/>
+    </Node>
+    <Link from="node_MultiFFT_1" output="OUTPUT" to="node_CMMakerFromFFTwithFlag_1" input="INPUT"/>
+    <Link from="node_CMMakerFromFFTwithFlag_1" output="OUTPUT" to="node_CMSave_1" input="INPUTCM"/>
+    <Link from="node_Constant_1" output="VALUE" to="node_CMSave_1" input="FILENAMER"/>
+    <Link from="node_Constant_2" output="VALUE" to="node_CMSave_1" input="FILENAMEI"/>
+    <Link from="node_Constant_3" output="VALUE" to="node_Equal_1" input="INPUT2"/>
+    <Link from="node_RosStdMsgsSubscriber_1" output="OUTPUT" to="node_Equal_1" input="INPUT1"/>
+    <Link from="node_Equal_1" output="OUTPUT" to="node_NOT_1" input="INPUT"/>
+    <Link from="node_NOT_1" output="OUTPUT" to="node_CMMakerFromFFTwithFlag_1" input="ADDER_FLAG"/>
+    <Link from="node_Equal_1" output="OUTPUT" to="node_CMSave_1" input="OPERATION_FLAG"/>
+    <Link from="node_VillaReadSharedMicrophone_1" output="AUDIO" to="node_MultiFFT_1" input="INPUT"/>
+    <Link from="node_Constant_4" output="VALUE" to="node_Equal_2" input="INPUT1"/>
+    <Link from="node_Constant_5" output="VALUE" to="node_Equal_2" input="INPUT2"/>
+    <NetOutput name="OUTPUTCM" node="node_CMSave_1" terminal="OUTPUTCM" object_type="Matrix&lt;complex&lt;float&gt;&gt;" description="Same as INPUTCM"/>
+    <NetCondition name="CONDITION" node="node_Equal_2" terminal="OUTPUT"/>
+  </Network>
+</Document>

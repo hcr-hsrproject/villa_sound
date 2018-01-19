@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+
+import rospy
+import numpy as np
+import itertools
+import sys
+import argparse
+from villa_audio._shared_microphone_stream_wrapper_cpp import SharedMicrophoneStreamWrapper
+from villa_helpers.srv import PersistentLog
+
+BUF_SIZE = 400
+
+def main(namespace):
+    rospy.init_node('audiologger')
+
+    rospy.wait_for_service('villa_vlogger')
+    vlogger = rospy.ServiceProxy('villa_vlogger', PersistentLog)
+    sms = SharedMicrophoneStreamWrapper()
+
+    flen = 160
+    channels = 4
+    buf = np.zeros(flen*channels*BUF_SIZE, dtype=np.int16)
+    sid = 0
+
+    for c in itertools.count():
+        if rospy.is_shutdown():
+            break
+
+        start = (c%BUF_SIZE)*flen*channels
+        buf[start:start+flen*channels] = sms.read(False, True)
+
+        if c % BUF_SIZE == 0:
+            sid = vlogger("audiolog_%s" % namespace,
+                       sid,
+                       buf.tostring()).sid
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Audio Logger')
+    parser.add_argument('-n','--namespace', help='Audio log namespace', required=True)
+    args = parser.parse_args(rospy.myargv(argv=sys.argv)[1:])
+
+    try:
+        main(args.namespace)
+    except KeyboardInterrupt:
+        sys.exit(0)

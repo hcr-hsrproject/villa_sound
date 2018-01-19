@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+import rospy
+import os.path
+import atexit
+import signal
+import subprocess
+from villa_sound_localization.noise import Noise
+from villa_sound_localization.settings import NETWORK_FILES_DIR
+
+# Create new process group and become its leader
+# Kill all children (!) on exit
+# Ignore if permission denied error (e.g. when node is roslaunched)
+try:
+    os.setpgrp()
+    atexit.register(lambda: os.killpg(0, signal.SIGKILL))
+except OSError:
+    pass
+
+rospy.init_node('calibrate_noise', anonymous=True)
+
+# Run main audiostream
+audiostream = subprocess.Popen(os.path.join(NETWORK_FILES_DIR, 'audiostream_sharedmem.n'))
+
+# Start noise calibration
+noise = Noise()
+noise.start()
+
+raw_input('Press ENTER to terminate collection...\n\n\n')
+
+# Stop noise calibration
+noise.stop()
